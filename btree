@@ -1,0 +1,32 @@
+
+.. homepage : http://web.eecs.utk.edu/~huangj/cs360/360/notes/JRB/
+
+    Khởi tạo thư viện B tree:
+    int btinit(void)
+
+    Tạo file B tree:
+    BTA *btcrt(char* fid, int nkeys, int shared) fid: tên file nkeys: số lượng khóa nhiều nhất
+    shared: nếu bằng 0 thì cho phép share, nếu khác 0 thì không cho phép hàm sẽ trả về root, nếu thất bại sẽ trả về NULL
+
+    Mở B tree file:
+    BTA *btopn(char *fid,int mode,int shared);
+    fid: tên file
+    mode: bằng 0 cho phép update, khác 0 thì ko cho phép
+    shared: 0 sẽ không cho phép access, khác 0 sẽ cho phép trả về NULL hoặc con trỏ root
+
+    Thoát B tree file: int btcls(BTA *btact);
+    thoát khỏi file B tree trỏ bởi con trỏ btact, nếu thành công sẽ trả về gía trị 0, khác 0 thì đã có lỗi xảy ra
+
+    Chèn key và data vào B tree:
+    int btins(BTA *btact, char *key, char *data, int dsize); trả về 0 nếu thanh công; dsize: độ dài của data
+    update data cho key: int btupd(BTA *btact, char *key, char *data, int dsize);
+
+    xác định dữ liệu của khóa có sẵn: int btsel(BTA *btact, char *key, char *data, int dsize, int *rsize);trả lại data record của key tồn tại.
+
+    Xóa key và data:int btdel(BTA *btact, char *key);trả về 0 nếu thành công
+
+    Xác định kích cỡ của data: int btrecs(BTA *btact, char *key, int *rsize);
+
+
+
+
