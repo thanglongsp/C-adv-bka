@@ -1,0 +1,51 @@
+Truyền tham trị (dùng trong cả C và C++)
+Khi truyền đối số kiểu tham trị, chương trình biên dịch sẽ copy giá trị của đối số 
+để gán cho tham số của hàm (không tác động trực tiếp đến biến số truyền vào).
+
+#include <stdio.h>
+#include <conio.h>
+ 
+int sum(int a, int b)
+{
+    a++;
+    b++;
+    return (a+b);
+}
+void main()
+{
+    int x =1, y = 2;
+    int s = 0;
+    s = sum(x, y); 
+    printf("\n s = %d", s);
+    printf("\n x = %d", x);
+    printf("\n y = %d", y);
+    getch();
+}
+
+result : 5 1 2
+
+Truyền tham biến
+Phương pháp truyền tham biến là cách truyền địa chỉ của đối số cho các tham số tương ứng của 
+hàm được gọi. Với cách truyền tham biến, giá trị của đối số truyền vào có thể bị thay đổi bởi việc gọi hàm.
+Truyền tham biến chia ra thành 2 loại : truyền con trỏ (dùng trong C và C++) , truyền tham chiếu (chỉ dùng trong C++)
+
+#include <stdio.h>
+#include <conio.h>
+ 
+void swap(int *a, int *b)
+{
+    int temp;
+    temp = *a;
+    *a = *b;
+    *b = temp;
+}
+void main()
+{
+    int x = 2, y = 3;
+    swap(&x, &y);
+    printf("\nx = %d", x);
+    printf("\ny = %d", y);
+    getch();
+}
+
+result : 3 2

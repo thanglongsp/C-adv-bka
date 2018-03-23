@@ -1,6 +1,6 @@
 
 .. homepage : http://web.eecs.utk.edu/~huangj/cs360/360/notes/JRB/
-
+.. https://hydrus.org.uk/doc/bt/html/index.html
     Khởi tạo thư viện B tree:
     int btinit(void)
 
